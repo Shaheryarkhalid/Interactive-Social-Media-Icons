@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.Main-Section{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Main-Section .Content-Wrapper{
+    position: relative;
+    display: flex;
+
+}
+.Main-Section .Content-Wrapper a{
+    position: relative;
+    display: block;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    margin: 20px;
+    outline:0px solid var(--color);
+    z-index: 0;
+}
+.Main-Section .Content-Wrapper a::before{
+    content: "";
+    position: absolute;
+    top:-10px;
+    left: -10px;  
+    transform: rotate(45deg);
+    height: 100px;
+    width: 100px;
+    background-color: #000;
+    z-index: 1;
+}
+.Main-Section .Content-Wrapper a::after{
+    content: "";
+    position: absolute;
+    top:10%;
+    left:10%;
+    height:80%;
+    width: 80%;
+    border: 1px solid var(--color);
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.Main-Section .Content-Wrapper a i{
+    position: relative;
+    height:50px;
+    width: 50px;
+    transform: translate(-20%, -20%);
+    color:var(--color);
+    padding: 40px;
+    font-size: 2rem;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+.Main-Section .Content-Wrapper a:hover i{
+    transform: scale(1.5) translate(-20%, -20%);
+    transition: all 0.5s ease;
+    text-shadow: 0 0 20px var(--color);
+}
+
+.Main-Section .Content-Wrapper a:hover::before{
+    top:-10px;
+    left: -15px;  
+    height: 105px;
+    width: 110px;
+
+}
+.Main-Section .Content-Wrapper a:hover::after{
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    transition: all 0.5s ease;
+}
+.Main-Section .Content-Wrapper a:hover{
+    outline-offset: 10px;
+    outline: 5px solid var(--color);
+    transition: all 0.5s ease;
+
+}
